@@ -28,7 +28,7 @@ Original PancakeSwap Router Contract: https://github.com/pancakeswap/pancake-swa
 
 Changes: 
 
-Omitted all but: safeMath library, pancake library (only including getAmountsOut function, getAmountOut function, sortTokens function and getReserves function), IPancakePair interface, safeTransferFrom function (edited), _ swap function (edited), swapExactTokensForTokens (edited and renamed "vSwap") and ensure modifier.
+Omitted all but: safeMath library, pancake library (only including getAmountsOut function, getAmountOut function, sortTokens function and getReserves function), IPancakePair interface, safeTransferFrom function, _ swap function (edited), swapExactTokensForTokens (edited and renamed "vSwap") and ensure modifier.
 
 Rather than calculating / sending amounts through "path" address array elements; getAmountsOut & safeTransferFrom & _ swap functions calculate / send amounts through the introduced "pairPath" address array elements. Also, the getAmountsOut function takes into account the introduced "fee" number array elements to calculate output accurately. The vSwap function returns success early rather than reverting the tx if the minAmountOut value is not met. A constructor function establishes an owner on deployment and an "onlyOwner" modifier has been included in the vSwap function.
 
